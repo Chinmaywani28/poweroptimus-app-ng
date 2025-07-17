@@ -187,9 +187,10 @@ import { FileUploaderComponent } from './forms/file-uploader/file-uploader.compo
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { RatioComponent } from './ui-elements/ratio/ratio.component';
 import { UtilitiesComponent } from './ui-elements/utilities/utilities.component';
+import { HomeDefaultComponent } from './home-default/home-default.component';
 
 export const routes: Routes = [
-    {path: '', component: EcommerceComponent},
+    {path: '', component: HomeDefaultComponent},
     {path: 'crm', component: CrmComponent},
     {path: 'project-management', component: ProjectManagementComponent},
     {path: 'lms', component: LmsComponent},

@@ -1,0 +1,55 @@
+.level-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-radius: 12px;
+  /* padding: 16px; */
+  gap: 16px;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 160px;
+}
+
+.level-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a64b0;
+}
+
+.level-value {
+  font-size: 55px;
+  font-weight: 700;
+  color: #1a64b0;
+}
+
+.level-subtext {
+  font-size: 14px;
+  color: #2673c2;
+  font-weight: 500;
+}
+
+.level-location {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.chart-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.chart {
+  width: 100%;
+  height: 160px;
+  min-width: 400px;
+}
