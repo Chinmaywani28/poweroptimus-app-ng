@@ -1,0 +1,27 @@
+<div class="level-card">
+  <!-- top side info -->
+  <div class="level-info">
+    <div class="level-header">
+      <div><i class="ri-temp-hot-fill"></i><span class="icon-text">Temperature</span></div>
+      <div class="level-value">34&deg;</div>
+    </div>
+
+    
+    <div class="tabs">
+      <button [class.active]="activeTab === 'D'" (click)="switchTab('D')">D</button>
+      <button [class.active]="activeTab === 'W'" (click)="switchTab('W')">W</button>
+      <button [class.active]="activeTab === 'M'" (click)="switchTab('M')">M</button>
+      <button [class.active]="activeTab === 'Y'" (click)="switchTab('Y')">Y</button>
+    </div>
+  </div>
+
+  <!-- down side chart -->
+  <div class="chart-placeholder">
+    
+    <div #chartContainer class="chart"></div>
+  </div>
+
+  <div class="marBtm">
+    <div>Incubator B,Research Lab,North Wing</div>
+  </div>
+</div>

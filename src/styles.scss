@@ -34,7 +34,7 @@ $daxa-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --fontFamily: 'Outfit', sans-serif;
+    // --fontFamily: 'Outfit', sans-serif;
     --daxaColor: #0f79f3;
     --primaryColor: #796df6;
     --dangerColor: #e74c3c;
@@ -160,3 +160,29 @@ button {
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+// my css
+body {
+  background-color: #d6dee1;
+  font-family: 'Inter', sans-serif;
+}
+
+.level-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a64b0;
+}
+
+.level-value {
+    margin-top: 13px;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1a64b0;
+}
+
+.marBtm{
+   margin-bottom: 13px;
+}
+.icon-text{
+    margin-left: 5px;
+}
