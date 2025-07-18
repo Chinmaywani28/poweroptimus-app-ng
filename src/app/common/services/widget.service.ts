@@ -11,7 +11,21 @@ export class WidgetService {
 
   getWeeklyData(){
     return this.http.get(``).pipe(map((item: any) => {
-        
+
+
+    }))
+  }
+
+  getMonthlyData(month: string){
+    return this.http.get(`/${month}`,).pipe(map((item: any) => {
+
+
+    }))
+  }
+
+  getYearlyData(yearly: string){
+    return this.http.get(`/${yearly}`,).pipe(map((item: any) => {
+
 
     }))
   }
