@@ -29,11 +29,12 @@ export class TemperatureChartWidgetTimeComponent {
 
     ngOnInit(): void {
         this.initChart();
-        this.autoUpdateChart();
-        this.getWeeklyData()
+        // this.autoUpdateChart();
+        this.getWeeklyData();
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        console.log('nn',this.data)
         if (changes['data'] && this.chart) {
             this.updateChartData();
         }
@@ -155,7 +156,7 @@ export class TemperatureChartWidgetTimeComponent {
     // }
 
     private getChartOption(): echarts.EChartsOption {
-        if (this.activeTab === 'D') {
+        
             return {
                 title: {
                     text: this.title,
@@ -179,11 +180,19 @@ export class TemperatureChartWidgetTimeComponent {
                     top: 30,
                     containLabel: true,
                 },
-                xAxis: {
-                    type: 'time',
-                    splitNumber: 3,
-                    axisLabel: { fontSize: 9 },
-                },
+                // xAxis: {
+                //     // type: 'time',
+                //     // splitNumber: 3,
+                //     // axisLabel: { fontSize: 9 },
+
+                //      type: 'time',
+                //     // boundaryGap: false
+                // },
+                            xAxis: {
+                    type: 'time'
+                    },
+
+                
                 yAxis: {
                     type: 'value',
                     axisLabel: { fontSize: 9 },
@@ -200,143 +209,121 @@ export class TemperatureChartWidgetTimeComponent {
                 ],
                 animation: false,
             };
-        }
-
-        switch (this.activeTab) {
-            case 'W':
-                    
-                return {
-            title: {
-                text: this.title,
-                left: 'center',
-                textStyle: { fontSize: 12, color: '#333' },
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: { type: 'shadow' },
-            },
-            grid: {
-                left: 30,
-                right: 10,
-                bottom: 30,
-                top: 30,
-                containLabel: true,
-            },
-            xAxis: {
-                type: 'category',
-                data: this.getCategoryLabels(),
-                axisLabel: { fontSize: 9 },
-            },
-            yAxis: {
-                type: 'value',
-                axisLabel: { fontSize: 9 },
-                splitLine: { show: false },
-            },
-            series: [
-                {
-                    type: 'bar',
-                    data: this.getBarData(),
-                    itemStyle: { color: '#1a64b0' },
-                },
-            ],
-            animation: false,
-        };;
         
-            case 'M':
-            
-                break;
 
-            case 'Y':
-                
-                break;
+        // switch (this.activeTab) {
+        //     case 'W':
+        //         return {
+        //             title: {
+        //                 text: this.title,
+        //                 left: 'center',
+        //                 textStyle: { fontSize: 12, color: '#333' },
+        //             },
+        //             tooltip: {
+        //                 trigger: 'axis',
+        //                 axisPointer: { type: 'shadow' },
+        //             },
+        //             grid: {
+        //                 left: 30,
+        //                 right: 10,
+        //                 bottom: 30,
+        //                 top: 30,
+        //                 containLabel: true,
+        //             },
+        //             xAxis: {
+        //                 type: 'category',
+        //                 data: this.getCategoryLabels(),
+        //                 axisLabel: { fontSize: 9 },
+        //             },
+        //             yAxis: {
+        //                 type: 'value',
+        //                 axisLabel: { fontSize: 9 },
+        //                 splitLine: { show: false },
+        //             },
+        //             series: [
+        //                 {
+        //                     type: 'bar',
+        //                     data: this.getBarData(),
+        //                     itemStyle: { color: '#1a64b0' },
+        //                 },
+        //             ],
+        //             animation: false,
+        //         };
 
-            default:
-                break;
-        }
+        //     case 'M':
+        //         break;
 
-        // Bar chart for W/M/Y
-        return {
-            title: {
-                text: this.title,
-                left: 'center',
-                textStyle: { fontSize: 12, color: '#333' },
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: { type: 'shadow' },
-            },
-            grid: {
-                left: 30,
-                right: 10,
-                bottom: 30,
-                top: 30,
-                containLabel: true,
-            },
-            xAxis: {
-                type: 'category',
-                data: this.getCategoryLabels(),
-                axisLabel: { fontSize: 9 },
-            },
-            yAxis: {
-                type: 'value',
-                axisLabel: { fontSize: 9 },
-                splitLine: { show: false },
-            },
-            series: [
-                {
-                    type: 'bar',
-                    data: this.getBarData(),
-                    itemStyle: { color: '#1a64b0' },
-                },
-            ],
-            animation: false,
-        };
+        //     case 'Y':
+        //         break;
+
+        //     default:
+        //         break;
+        // }
+
+        // // Bar chart for W/M/Y
+        // return {
+        //     title: {
+        //         text: this.title,
+        //         left: 'center',
+        //         textStyle: { fontSize: 12, color: '#333' },
+        //     },
+        //     tooltip: {
+        //         trigger: 'axis',
+        //         axisPointer: { type: 'shadow' },
+        //     },
+        //     grid: {
+        //         left: 30,
+        //         right: 10,
+        //         bottom: 30,
+        //         top: 30,
+        //         containLabel: true,
+        //     },
+        //     xAxis: {
+        //         type: 'category',
+        //         data: this.getCategoryLabels(),
+        //         axisLabel: { fontSize: 9 },
+        //     },
+        //     yAxis: {
+        //         type: 'value',
+        //         axisLabel: { fontSize: 9 },
+        //         splitLine: { show: false },
+        //     },
+        //     series: [
+        //         {
+        //             type: 'bar',
+        //             data: this.getBarData(),
+        //             itemStyle: { color: '#1a64b0' },
+        //         },
+        //     ],
+        //     animation: false,
+        // };
     }
 
     // Convert object array to ECharts array format
-    private formatDataForChart(): [number, number][] {
-        return this.data.map((item) => [item.time, item.value]);
+    // private formatDataForChart(): any {
+    //     return this.data.map((item) => [item.time, item.value]);
+    // }
+
+    private formatDataForChart(): any[] {
+        return this.data.map((item) => [
+            item.time * 1000, // 🔥 convert seconds to milliseconds
+            item.value,
+        ]);
     }
 
     // Update chart with current data
     private updateChartData(): void {
-        this.chart.setOption({
-            series: [
-                {
-                    data: this.formatDataForChart(),
-                },
-            ],
-        });
+
+        this.chart.setOption(this.getChartOption(), true);
     }
 
-    // Auto-scroll x-axis to show last 60s
-    private autoUpdateChart(): void {
-        this.updateInterval = setInterval(() => {
-            const now = Date.now();
-
-            const date = new Date(now);
-
-            // Extract hours and minutes, and pad them with 0 if needed
-            const hours = String(date.getHours()).padStart(2, '0');
-            const minutes = String(date.getMinutes()).padStart(2, '0');
-
-            console.log('noow', now);
-            this.chart.setOption({
-                xAxis: {
-                    min: now - 60_000,
-                    max: now,
-                },
-            });
-        }, 2000);
-    }
 
     switchTab(tab: 'D' | 'W' | 'M' | 'Y') {
-        this.activeTab = tab;
-        clearInterval(this.updateInterval); // Stop scrolling if not Daily
-
-        if (tab === 'D') {
-            this.autoUpdateChart();
-        }
+        // this.activeTab = tab;
+        // clearInterval(this.updateInterval); // Stop scrolling if not Daily
+        // if (tab === 'D') {
+        //     // this.autoUpdateChart();
+        // }
 
         this.chart.setOption(this.getChartOption(), true);
     }
@@ -367,15 +354,12 @@ export class TemperatureChartWidgetTimeComponent {
     private getBarData(): number[] {
         if (this.activeTab === 'W') {
             // return [22, 24, 21, 23, 25, 26, 40];
-            
-        } 
+        }
         if (this.activeTab === 'M') {
             return [26, 28, 25, 27];
-        } 
+        }
         return [15, 18, 20, 24, 29, 35, 32, 30, 28, 22, 20, 18]; // example
     }
 
-    getWeeklyData(){
-
-    }
+    getWeeklyData() {}
 }

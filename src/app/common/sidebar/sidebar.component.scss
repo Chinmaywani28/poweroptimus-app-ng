@@ -1227,3 +1227,36 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+
+// new sidebar css acc to kk wireframe
+.tree-node {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 16px;
+  color: #777;
+}
+
+.icon {
+  width: 22px;
+  margin-right: 6px;
+}
+
+.label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.actions {
+  display: none;
+}
+
+.tree-node:hover .actions {
+  display: inline-flex;
+  gap: 4px;
+}

@@ -1,0 +1,64 @@
+<div
+  class="tree-node"
+  [style.paddingLeft.px]="node.level * 16"
+>
+
+  <!-- expand icon -->
+  <span
+    class="chevron"
+    
+    (click)="toggle()"
+  >
+    <!-- {{ expanded ? '▾' : '▸' }} -->
+    <span class="toggle-icon">
+      <i *ngIf="!expanded" class="ri-arrow-right-s-line"></i>
+      <i *ngIf="expanded" class="ri-arrow-down-s-line"></i>
+    </span>
+
+  </span>
+
+  <!-- icon -->
+  <span class="icon">
+    {{ getIcon(node.type) }}
+  </span>
+
+  <!-- label -->
+  <span class="label" (click)="onSelect(node)">
+    {{ node.name }}
+  </span>
+
+  <!-- actions -->
+  <span class="actions">
+    <button (click)="addChild(node)">
+      <i class="ri-add-line"></i>
+    </button>
+    <!-- <button (click)="editNode(node)">✏️</button>
+    <button (click)="deleteNode(node)">🗑</button> -->
+  </span>
+
+</div>
+
+<!-- CHILDREN (RECURSION) -->
+<div *ngIf="expanded">
+  <app-tree-nodes
+    *ngFor="let child of node.children"
+    [node]="child"
+    (nodeSelected)="onChildSelected($event)">
+  </app-tree-nodes>
+</div>
+
+<!-- ADD INPUT (appears after clicking +) -->
+<div
+  class="add-input"
+  *ngIf="showAddInput"
+  [style.paddingLeft.px]="(node.level + 1) * 16"
+>
+  <input
+    type="text"
+    placeholder="Enter name"
+    [(ngModel)]="newNodeName"
+    (keyup.enter)="saveChild(node)"
+  />
+
+  <button (click)="saveChild(node)">✔</button>
+</div>

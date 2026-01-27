@@ -1,0 +1,142 @@
+<!-- <div class="dashboard">
+
+ 
+  <div class="card card-small">
+    <div class="card-header">
+      <span class="card-title">Daily Data</span>
+      <span class="card-unit">°C</span>
+    </div>
+    <div class="card-body chart">
+            <div class="chart-placeholder">
+                  <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData"></app-basic-bar>
+
+            </div>
+
+    </div>
+  </div>
+
+  
+  <div class="card card-small">
+    <div class="card-header">
+      <span class="card-title">Pressure</span>
+      <span class="card-unit">psi</span>
+    </div>
+    <div class="card-body chart">
+            <div class="chart-placeholder">Line / Bar Chart</div>
+
+    </div>
+  </div>
+
+  
+  <div class="card card-medium">
+    <div class="card-header">
+      <span class="card-title">Level Trend</span>
+    </div>
+    <div class="card-body chart">
+      <div class="chart-placeholder">Line / Bar Chart</div>
+    </div>
+  </div>
+
+  
+  <div class="card card-large">
+    <div class="card-header">
+      <span class="card-title">Utilization Pattern</span>
+    </div>
+    <div class="card-body chart scroll-x">
+      <div class="chart-placeholder">Heatmap</div>
+    </div>
+  </div>
+
+  
+  <div class="card card-small">
+    <div class="card-header">
+      <span class="card-title">Pressure Gauge</span>
+    </div>
+    <div class="card-body chart">
+      <div class="chart-placeholder">Gauge</div>
+    </div>
+  </div>
+
+  
+  <div class="card card-medium">
+    <div class="card-header">
+      <span class="card-title">Activity</span>
+    </div>
+    <div class="card-body chart scroll-x">
+      <div class="chart-placeholder">Bar Chart</div>
+    </div>
+  </div>
+
+</div> -->
+
+
+@if (flllorr) {
+  <div class="dashboard">
+
+  <!-- CARD -->
+  <div class="chart-card">
+    <div class="card-header">Live</div>
+
+    <div class="card-body">
+      <div class="chart-box">
+          <app-stage-speed-guage [refreshInterval]="3000" [min]="0" [max]="200" unit="kW" [data]="StageSpeedGuagedata"></app-stage-speed-guage>
+      </div>
+      <!-- <app-line-chart ></app-line-chart> -->
+       
+    </div>
+    <div class="card-header">Parking Sensor</div>
+
+  </div>
+
+  <!-- CARD -->
+  <div class="chart-card">
+    <div class="card-header">Day</div>
+    
+    <div class="card-body chart-scroll">
+
+      <div class="chart-host">
+        <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar>
+
+      </div>
+
+      <!-- <div class="chart-box">
+
+        <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar>
+
+
+      </div> -->
+    </div>
+    <div class="card-header">Parking Sensor</div>
+  </div>
+
+  <!-- CARD -->
+  <div class="chart-card">
+    <div class="card-header"> Week</div>
+
+    <div class="card-body center">
+      <div class="chart-box">
+        <app-basic-bar [xaxisData]="sevenBarXData" [seriesData]="sevenBarYData" [xName]="'Day'"></app-basic-bar>
+        
+      </div>
+    </div>
+    <div class="card-header">Parking Sensor</div>
+  </div>
+
+  <!-- CARD -->
+  <div class="chart-card">
+    <div class="card-header"> Month</div>
+
+    <div class="card-body">
+      <div class="chart-box">
+        <app-basic-bar [xaxisData]="monthBarXData" [seriesData]="monthBarYData" [xName]="'Days'"></app-basic-bar>
+        
+      </div>
+    </div>
+    <div class="card-header">Parking Sensor</div>
+  </div>
+
+</div>
+
+}
+
+

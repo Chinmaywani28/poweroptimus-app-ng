@@ -7,24 +7,46 @@
   <div class="card card-orange">Level<br />18%</div> -->
 
   <!-- Row 2 -->
-  <div class="card card-blue">
+  <!-- <div class="card card-blue"> -->
     
         <!-- <app-live-temp-chart></app-live-temp-chart> -->
-        <app-live-temp-chart-time></app-live-temp-chart-time>
+        <!-- <app-live-temp-chart-time [data]="data"></app-live-temp-chart-time> -->
+         <!-- <app-live-chart-component></app-live-chart-component> -->
 
+      <!-- <div class="chart-wrapper">
+    <div #chartContainer class="chart-box"></div>
+  </div> -->
 
+      
+      
     
+  <!-- </div> -->
+  <div class="card card-blue">
+        Hourly Data
+        <app-basic-bar [xaxisData]="barXData" [seriesData]="barYData"></app-basic-bar>
   </div>
-  <div class="card card-blue">Level</div>
-  <div class="card card-blue">Pressure</div>
-  <div class="card card-blue">Level</div>
+  <div class="card card-blue">
+        Daily Data
+        <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData"></app-basic-bar>
+  </div>
+  <div class="card card-blue">
+      Heatmap
+
+      <app-heatmap [xAxisLabels]="xLabels" [yAxisLabels]="yLabels" [heatmapData]="heatmapValues"></app-heatmap>
+
+  </div>
 
   <!-- Row 3 -->
-  <div class="card card-blue">Temperature</div>
-  <div class="card card-blue">Pressure</div>
-  <div class="card card-blue">Noise</div>
+  <div class="card card-blue">
+      Energy Load
+      <app-stage-speed-guage [refreshInterval]="3000" [min]="0" [max]="200" unit="kW" [data]="StageSpeedGuagedata"></app-stage-speed-guage>
+  </div>
+  <!-- <div class="card card-blue">
+
+  </div> -->
+  <!-- <div class="card card-blue">Noise</div>
   <div class="card card-blue">LUX</div>
-  <div class="card card-blue">Level</div>
+  <div class="card card-blue">Level</div> -->
 
   <!-- Row 4 -->
   <!-- <div class="card card-blue-light">Proximity<br />Bar Chart</div>
@@ -32,3 +54,6 @@
   <div class="card card-blue-light">Pressure<br />200 psi</div>
   <div class="card card-blue-light">Pressure<br />750 psi</div> -->
 </div>
+
+        
+

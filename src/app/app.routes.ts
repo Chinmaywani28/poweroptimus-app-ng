@@ -188,9 +188,11 @@ import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { RatioComponent } from './ui-elements/ratio/ratio.component';
 import { UtilitiesComponent } from './ui-elements/utilities/utilities.component';
 import { HomeDefaultComponent } from './home-default/home-default.component';
+import { HomeDefaultTwoComponent } from './home-default-two/home-default-two.component';
+import { HomeDefaultThreeComponent } from './home-default-three/home-default-three.component';
 
 export const routes: Routes = [
-    {path: '', component: HomeDefaultComponent},
+    {path: '', component: HomeDefaultTwoComponent},
     {path: 'crm', component: CrmComponent},
     {path: 'project-management', component: ProjectManagementComponent},
     {path: 'lms', component: LmsComponent},
