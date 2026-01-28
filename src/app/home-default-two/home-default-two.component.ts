@@ -81,22 +81,22 @@ sevenBarYData: any
                     '09:00',
                     '10:00',
                     '11:00',
-                    '12:00',
-                    '13:00',
-                    '14:00',
-                    '15:00',
-                    '16:00',
-                    '17:00',
-                    '18:00',
-                    '19:00',
-                    '20:00',
-                    '21:00',
-                    '22:00',
-                    '23:00',
+                    // '12:00',
+                    // '13:00',
+                    // '14:00',
+                    // '15:00',
+                    // '16:00',
+                    // '17:00',
+                    // '18:00',
+                    // '19:00',
+                    // '20:00',
+                    // '21:00',
+                    // '22:00',
+                    // '23:00',
                 ];
                 this.weeklyBarYData = [
                     120, 118, 115, 113, 110, 112, 118, 125, 130, 138, 142, 145,
-                    148, 150, 147, 143, 140, 138, 135, 132, 130, 128, 125, 90,
+                    // 148, 150, 147, 143, 140, 138, 135, 132, 130, 128, 125, 90,
                 ];
 
                 // this.StageSpeedGuagedata = [
@@ -112,8 +112,19 @@ sevenBarYData: any
                     // { timestamp: '14:02', value: 118 },
                     // { timestamp: '14:03', value: 121 },
                     // { timestamp: '14:04', value: 119 },
-                    { value: 122 },
+                    { value: 130 },
                 ]; 
+
+
+                                    setInterval(() => {
+                    const data = {
+                        value: this.getRandom(100, 150)
+                    };
+
+                    console.log(data,'nhh');
+                    this.StageSpeedGuagedata = [data]
+                    }, 2000);
+
 
                 this.monthBarXData = [
                     'Day 1',
@@ -154,7 +165,7 @@ sevenBarYData: any
                     109, 141, 105, 124, 107, 128,
                 ];
 
-                this.sevenBarXData= [120,135,128,140,145,138,130]
+                this.sevenBarXData= ["Mon","Tue","Wed","Thurs","Fri","Sat","Sun"]
                 this.sevenBarYData= [120,135,128,140,145,138,130]
 
 
@@ -169,5 +180,12 @@ sevenBarYData: any
     
 
     ngOnViewInit() {}
+
+
+    getRandom(min:any, max: any) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    
 }
 

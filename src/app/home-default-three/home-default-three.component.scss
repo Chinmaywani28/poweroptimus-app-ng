@@ -1,27 +1,106 @@
-.dashboard {
+.dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Desktop default */
+  grid-template-columns: repeat(12, 1fr);
   gap: 16px;
   padding: 16px;
+  background: #f5f7fa;
 }
 
-/* Laptop */
-@media (max-width: 1199px) {
-  .dashboard {
-    grid-template-columns: repeat(2, 1fr);
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.card.small  { grid-column: span 3; height: 320px; }
+.card.medium { grid-column: span 6; height: 320px; }
+.card.large  { grid-column: span 12; height: 420px; }
+
+
+.card-header {
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.card-body {
+  flex: 1;
+  min-height: 0; /* critical */
+  padding: 12px;
+}
+
+
+// fake chart styles
+.fake-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Different fake chart looks */
+.fake-chart.line {
+  background: repeating-linear-gradient(
+    45deg,
+    #e3f2fd,
+    #e3f2fd 10px,
+    #bbdefb 10px,
+    #bbdefb 20px
+  );
+}
+
+.fake-chart.bar {
+  background: linear-gradient(to top, #c8e6c9, #a5d6a7);
+}
+
+.fake-chart.area {
+  background: linear-gradient(to top right, #ffe0b2, #ffcc80);
+}
+
+.fake-chart.kpi {
+  font-size: 32px;
+  background: #ede7f6;
+}
+
+.fake-chart.heatmap {
+  background: radial-gradient(circle, #ffcdd2, #ef9a9a);
+}
+
+.fake-chart.gauge {
+  background: conic-gradient(#81c784 0deg 240deg, #eee 240deg);
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .card.small {
+    grid-column: span 4;
+  }
+
+  .card.medium,
+  .card.large {
+    grid-column: span 8;
   }
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .dashboard {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
 @media (max-width: 600px) {
-  .dashboard {
-    grid-template-columns: 1fr;
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card.small,
+  .card.medium,
+  .card.large {
+    grid-column: span 4;
   }
 }

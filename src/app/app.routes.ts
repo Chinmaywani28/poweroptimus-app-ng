@@ -192,7 +192,7 @@ import { HomeDefaultTwoComponent } from './home-default-two/home-default-two.com
 import { HomeDefaultThreeComponent } from './home-default-three/home-default-three.component';
 
 export const routes: Routes = [
-    {path: '', component: HomeDefaultTwoComponent},
+    {path: '', component: HomeDefaultThreeComponent},
     {path: 'crm', component: CrmComponent},
     {path: 'project-management', component: ProjectManagementComponent},
     {path: 'lms', component: LmsComponent},

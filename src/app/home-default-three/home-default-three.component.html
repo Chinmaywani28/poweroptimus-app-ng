@@ -1,30 +1,48 @@
-<div class="chart-card">
-  <div class="card-header">Day</div>
+<div class="dashboard-grid">
 
-  <div class="chart-scroll">
-    <div class="chart-host">
-      <app-basic-bar
-        [xaxisData]="weeklyBarXData"
-        [seriesData]="weeklyBarYData">
-      </app-basic-bar>
+  <div class="card small">
+    <div class="card-header">Small Chart</div>
+    <div class="card-body">
+      <div class="fake-chart line">Line</div>
     </div>
   </div>
 
-  <div class="card-header">Parking Sensor</div>
-</div>
-
-
-<div class="chart-card">
-  <div class="card-header">Day</div>
-
-  <div class="chart-scroll">
-    <div class="chart-host">
-      <app-basic-bar
-        [xaxisData]="weeklyBarXData"
-        [seriesData]="weeklyBarYData">
-      </app-basic-bar>
+  <div class="card small">
+    <div class="card-header">Small Chart</div>
+    <div class="card-body">
+      <div class="fake-chart bar">Bar</div>
     </div>
   </div>
 
-  <div class="card-header">Parking Sensor</div>
+  <div class="card medium">
+    <div class="card-header">Medium Chart</div>
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar>
+        
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card small">
+    <div class="card-header">Small KPI</div>
+    <div class="card-body">
+      <div class="fake-chart kpi">72%</div>
+    </div>
+  </div>
+
+  <div class="card large">
+    <div class="card-header">Large Chart</div>
+    <div class="card-body">
+      <div class="fake-chart heatmap">Heatmap</div>
+    </div>
+  </div>
+
+  <div class="card medium">
+    <div class="card-header">Medium Chart</div>
+    <div class="card-body">
+      <div class="fake-chart gauge">Gauge</div>
+    </div>
+  </div>
+
 </div>

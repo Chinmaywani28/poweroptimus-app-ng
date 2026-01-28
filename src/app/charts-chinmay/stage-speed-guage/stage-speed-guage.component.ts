@@ -82,7 +82,7 @@ export class StageSpeedGuageComponent {
           axisLabel: {
             color: 'inherit',
             distance: 40,
-            fontSize: 14
+            fontSize: 12
           },
           detail: {
             valueAnimation: true,
