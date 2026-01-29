@@ -17,6 +17,7 @@ import { StageSpeedGuageComponent } from "../charts-chinmay/stage-speed-guage/st
 import { LineChartComponent } from "../charts-chinmay/line-chart/line-chart.component";
 import { MediumCardComponent } from "../charts-chinmay/medium-card/medium-card.component";
 import { SmallCardComponent } from "../charts-chinmay/small-card/small-card.component";
+import { LargeCardComponent } from "../charts-chinmay/large-card/large-card.component";
 
 @Component({
     selector: 'app-home-default-three',
@@ -36,7 +37,8 @@ import { SmallCardComponent } from "../charts-chinmay/small-card/small-card.comp
     LineChartComponent,
     BasicBarComponent,
     MediumCardComponent,
-    SmallCardComponent
+    SmallCardComponent,
+    LargeCardComponent
 ],
     templateUrl: './home-default-three.component.html',
     styleUrl: './home-default-three.component.scss',

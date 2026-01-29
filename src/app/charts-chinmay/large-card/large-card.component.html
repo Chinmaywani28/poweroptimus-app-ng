@@ -1,0 +1,53 @@
+<div class="card large temp-card">
+
+  <!-- HEADER -->
+  <div class="temp-header">
+    <div class="temp-title">
+      ❄ Temperature
+    </div>
+
+    <div class="temp-tabs">
+      <button>D</button>
+      <button>W</button>
+      <button>M</button>
+      <button class="active">Y</button>
+    </div>
+  </div>
+
+  <!-- BIG VALUE -->
+  <div class="temp-value">
+    <span class="value">34</span>
+    <span class="unit">°C</span>
+  </div>
+
+  <!-- YEAR / PERIOD NAV (SAME FOR ALL) -->
+  <div class="temp-year">
+    <button class="nav-btn">‹</button>
+    <span class="year-text">2023</span>
+    <button class="nav-btn">›</button>
+  </div>
+
+  <!-- 🔥 CHART SLOT (ONLY THIS CHANGES) -->
+  <div class="temp-chart-slot">
+    <!-- Example usage (Angular later) -->
+    <!-- <app-temp-heatmap></app-temp-heatmap> -->
+    <!-- <app-temp-month-chart></app-temp-month-chart> -->
+    <!-- <app-temp-week-chart></app-temp-week-chart> -->
+    <!-- <app-temp-day-chart></app-temp-day-chart> -->
+
+      <app-heatmap [xAxisLabels]="WEEKLY_X" [yAxisLabels]="WEEKLY_Y" [heatmapData]="WEEKLY_HEATMAP_DATA"></app-heatmap>
+
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="temp-footer">
+    <div class="summary">
+      Max 40°C | Avg 24°C | Min 18°C
+    </div>
+    <div class="location">
+      Incubator B, Research Lab, North Wing
+    </div>
+  </div>
+
+</div>

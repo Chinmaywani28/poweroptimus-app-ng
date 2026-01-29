@@ -1,0 +1,101 @@
+/* CARD BASE */
+.temp-card {
+  height: 420px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* HEADER */
+.temp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temp-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+/* TABS */
+.temp-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.temp-tabs button {
+  border: none;
+  background: #eef3f8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.temp-tabs .active {
+  background: #1a73e8;
+  color: #fff;
+}
+
+/* BIG VALUE */
+.temp-value {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.temp-value .value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a73e8;
+  line-height: 1;
+}
+
+.temp-value .unit {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-left: 4px;
+  margin-top: 6px;
+}
+
+/* YEAR NAV */
+.temp-year {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.nav-btn {
+  border: none;
+  background: #f1f3f5;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🔥 CHART SLOT (MOST IMPORTANT PART) */
+.temp-chart-slot {
+  flex: 1;
+  min-height: 0;       /* 🔥 prevents chart cut */
+  width: 100%;
+  overflow: hidden;   /* 🔥 prevents overflow */
+}
+
+/* FOOTER */
+.temp-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.summary {
+  color: #1a73e8;
+  margin-bottom: 4px;
+}
