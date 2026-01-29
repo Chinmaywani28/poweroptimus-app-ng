@@ -3,20 +3,22 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 16px;
   padding: 16px;
-  background: #f5f7fa;
+  // background: #f5f7fa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  background: #fff;
+  // background: #fff;
+  background: #FFFFFF;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   overflow: hidden;
 }
 
-.card.small  { grid-column: span 3; height: 320px; }
-.card.medium { grid-column: span 6; height: 320px; }
+.card.small  { grid-column: span 3; height: 290px; } // first height: 300px;
+.card.medium { grid-column: span 6; height: 290px; } // first height: 320px;
 .card.large  { grid-column: span 12; height: 420px; }
 
 

@@ -66,11 +66,14 @@ export class BasicBarComponent {
                 //   alignWithLabel: this.axisAlignTick
                 // }
                 // axis tick
-                name: this.xName,    
+                // name: this.xName, 
+                 name: this.xName,          // "Hour"
+                nameLocation: 'middle',    // center it
+                nameGap: 26,    
             },
             yAxis: {
                 type: 'value',
-                name: 'Energy kW',    
+                name: 'kW',    
             },
             series: [
                 {

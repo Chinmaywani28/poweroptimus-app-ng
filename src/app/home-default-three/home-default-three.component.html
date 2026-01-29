@@ -1,45 +1,70 @@
 <div class="dashboard-grid">
 
   <div class="card small">
-    <div class="card-header">Small Chart</div>
+    <!-- <div class="card-header">Small Chart</div> -->
     <div class="card-body">
-      <div class="fake-chart line">Line</div>
+      <!-- <div class="fake-chart line">Line</div> -->
+       <app-small-card></app-small-card>
     </div>
   </div>
 
   <div class="card small">
-    <div class="card-header">Small Chart</div>
+    <!-- <div class="card-header">Small Chart</div> -->
     <div class="card-body">
-      <div class="fake-chart bar">Bar</div>
+      <!-- <div class="fake-chart bar">Bar</div> -->
+       <app-small-card [metric]="'Temperature'" [value]="72" [unit]="'deg'" [location]="'Tank A,Production Hall, Main Plant'"></app-small-card>
     </div>
   </div>
 
   <div class="card medium">
-    <div class="card-header">Medium Chart</div>
+    <!-- <div class="card-header">Medium Chart</div> -->
     <div class="card-body">
       <!-- <div class="fake-chart "> -->
-        <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar>
+        <!-- <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar> -->
         
+        <app-medium-card [chart]="'bar'" [metric]="'Energy'" [status]="'Active'" [location]="'Tank A,Production Hall, Main Plant'"></app-medium-card>
       <!-- </div> -->
     </div>
   </div>
 
-  <div class="card small">
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'line'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <!-- <div class="card small">
     <div class="card-header">Small KPI</div>
     <div class="card-body">
       <div class="fake-chart kpi">72%</div>
     </div>
-  </div>
+  </div> -->
 
   <div class="card large">
-    <div class="card-header">Large Chart</div>
+    <!-- <div class="card-header">Large Chart</div> -->
     <div class="card-body">
       <div class="fake-chart heatmap">Heatmap</div>
     </div>
   </div>
 
   <div class="card medium">
-    <div class="card-header">Medium Chart</div>
+    <!-- <div class="card-header">Medium Chart</div> -->
     <div class="card-body">
       <div class="fake-chart gauge">Gauge</div>
     </div>

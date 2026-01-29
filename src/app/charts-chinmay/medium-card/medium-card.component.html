@@ -1,0 +1,46 @@
+<div class="card medium proximity-card">
+
+  <div class="card-body proximity-body">
+
+    <!-- LEFT INFO -->
+    <div class="proximity-info">
+      <div class="proximity-header">
+        <span class="icon">📈</span>
+        <span class="title"> {{metric}}</span>
+      </div>
+
+      <div class="status"> {{status}}</div>
+
+      <div class="location">
+        <!-- Warehouse 2,<br />
+        South Block, Main Facility -->
+        {{location}}
+      </div>
+    </div>
+
+    <!-- RIGHT CHART -->
+    <div class="proximity-chart">
+      <!-- Replace this div with ECharts later -->
+      <!-- <div class="chart-placeholder"> -->
+
+        @switch (chart) {
+
+        @case ('bar') {
+          <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar>
+        }
+
+        @case ('line') {
+          <app-line-chart [xAxisData]="['12AM','3AM','6AM','9AM','12PM']" [seriesData]="[22, 24, 23, 26, 25]"
+            xName="Hour" yName="Per%">
+          </app-line-chart>
+        }
+
+        }
+
+        
+      <!-- </div> -->
+    </div>
+
+  </div>
+
+</div>

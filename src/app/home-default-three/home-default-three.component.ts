@@ -15,6 +15,8 @@ import { BasicBarComponent } from "../charts-chinmay/basic-bar/basic-bar.compone
 import { HeatMapComponent } from '../charts-chinmay/heatmap/heatmap.component';
 import { StageSpeedGuageComponent } from "../charts-chinmay/stage-speed-guage/stage-speed-guage.component";
 import { LineChartComponent } from "../charts-chinmay/line-chart/line-chart.component";
+import { MediumCardComponent } from "../charts-chinmay/medium-card/medium-card.component";
+import { SmallCardComponent } from "../charts-chinmay/small-card/small-card.component";
 
 @Component({
     selector: 'app-home-default-three',
@@ -32,7 +34,9 @@ import { LineChartComponent } from "../charts-chinmay/line-chart/line-chart.comp
     HeatMapComponent,
     StageSpeedGuageComponent,
     LineChartComponent,
-    BasicBarComponent
+    BasicBarComponent,
+    MediumCardComponent,
+    SmallCardComponent
 ],
     templateUrl: './home-default-three.component.html',
     styleUrl: './home-default-three.component.scss',
