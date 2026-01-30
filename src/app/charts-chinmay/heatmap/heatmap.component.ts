@@ -16,6 +16,17 @@ export class HeatMapComponent {
   @ViewChild('heatmapChart', { static: true }) chartRef!: ElementRef;
   chartInstance!: echarts.ECharts;
   option!: echarts.EChartsOption
+  HEATMAP_COLORS_COOL_WARM = [
+  '#2c7bb6', // cool blue
+  '#00a6ca',
+  '#00ccbc',
+  '#90eb9d',
+  '#ffff8c',
+  '#f9d057',
+  '#f29e2e',
+  '#e76818',
+  '#d7191c'  // hot red
+];
 
   ngAfterViewInit(): void{
     this.initChart()
@@ -64,12 +75,26 @@ export class HeatMapComponent {
         },
       },
       visualMap: {
+        show: false,
         min: 0,
         max: 10,
         calculable: true,
         orient: 'horizontal',
         left: 'center',
         bottom: '15%',
+        type: 'piecewise',   // 👈 IMPORTANT
+        dimension: 2,        // 👈 THIS IS THE KEY FIX
+        //   inRange: {
+        //   color: this.HEATMAP_COLORS_COOL_WARM
+        // }
+           pieces: [
+        { min: 25, max: 34, color: '#e8f0fe' }, // very low (super light)
+        { min: 35, max: 44, color: '#d2e3fc' }, // low
+        { min: 45, max: 54, color: '#aecbfa' }, // medium
+        { min: 55, max: 64, color: '#8ab4f8' }, // high
+        { min: 65, max: 80, color: '#669df6' }  // very high (still light, not dark)
+      ]
+
       },
       series: [
         {

@@ -7,38 +7,86 @@
     </div>
 
     <div class="temp-tabs">
-      <button>D</button>
-      <button>W</button>
-      <button>M</button>
-      <button class="active">Y</button>
+      <button [class.active]="selectedView === 'D'" (click)="changeView('D')">
+        D
+      </button>
+      <button [class.active]="selectedView === 'W'" (click)="changeView('W')">
+        W
+      </button>
+      <button [class.active]="selectedView === 'M'" (click)="changeView('M')">
+        M
+      </button>
+      <button [class.active]="selectedView === 'Y'" (click)="changeView('Y')">
+        Y
+      </button>
     </div>
+
+
   </div>
 
   <!-- BIG VALUE -->
-  <div class="temp-value">
+  <!-- <div class="temp-value">
     <span class="value">34</span>
     <span class="unit">°C</span>
+  </div> -->
+
+  
+
+
+  <div class="chart-content" [ngSwitch]="selectedView">
+    <ng-container *ngSwitchCase="'D'">
+      <div class="temp-year">
+        <div class="temp-year">
+          <button class="nav-btn">‹</button>
+          <span class="year-text">2023</span>
+          <button class="nav-btn">›</button>
+        </div>
+  
+        <!-- 🔥 CHART SLOT (ONLY THIS CHANGES) -->
+        <div class="temp-chart-slot">
+          <app-heatmap
+          *ngIf="WEEKLY_HEATMAP_DATA" 
+           [xAxisLabels]="WEEKLY_X" [yAxisLabels]="WEEKLY_Y"
+            [heatmapData]="WEEKLY_HEATMAP_DATA"></app-heatmap>
+        </div>
+  
+      </div>
+  
+  
+    </ng-container>
+  
+    <!-- WEEKLY -->
+    <ng-container *ngSwitchCase="'W'">
+      <div class="week-label">
+  
+          w
+  
+  
+      </div>
+  
+  
+    </ng-container>
+  
+    <!-- MONTHLY -->
+    <ng-container *ngSwitchCase="'M'">
+      <div class="month-label">
+         m
+      </div>
+  
+  
+    </ng-container>
+  
+    <!-- YEARLY -->
+    <ng-container *ngSwitchCase="'Y'">
+      <div class="temp-year">
+        y
+      </div>
+  
+  
+    </ng-container>
+  
   </div>
 
-  <!-- YEAR / PERIOD NAV (SAME FOR ALL) -->
-  <div class="temp-year">
-    <button class="nav-btn">‹</button>
-    <span class="year-text">2023</span>
-    <button class="nav-btn">›</button>
-  </div>
-
-  <!-- 🔥 CHART SLOT (ONLY THIS CHANGES) -->
-  <div class="temp-chart-slot">
-    <!-- Example usage (Angular later) -->
-    <!-- <app-temp-heatmap></app-temp-heatmap> -->
-    <!-- <app-temp-month-chart></app-temp-month-chart> -->
-    <!-- <app-temp-week-chart></app-temp-week-chart> -->
-    <!-- <app-temp-day-chart></app-temp-day-chart> -->
-
-      <app-heatmap [xAxisLabels]="WEEKLY_X" [yAxisLabels]="WEEKLY_Y" [heatmapData]="WEEKLY_HEATMAP_DATA"></app-heatmap>
-
-
-  </div>
 
   <!-- FOOTER -->
   <div class="temp-footer">

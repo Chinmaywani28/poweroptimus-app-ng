@@ -15,7 +15,7 @@
 }
 
 .temp-title {
-  font-size: 14px;
+  font-size: 26px;
   font-weight: 600;
   color: #1a73e8;
 }
@@ -43,12 +43,13 @@
 /* BIG VALUE */
 .temp-value {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: flex-start;
+  padding-left: 39px;
 }
 
 .temp-value .value {
-  font-size: 48px;
+  font-size: 45px;
   font-weight: 700;
   color: #1a73e8;
   line-height: 1;
@@ -98,4 +99,21 @@
 .summary {
   color: #1a73e8;
   margin-bottom: 4px;
+}
+
+.card.large.temp-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chart-content {
+  flex: 1;
+  min-height: 260px;   /* 👈 IMPORTANT */
+}
+
+.temp-chart-slot {
+  width: 100%;
+  height: 100%;        /* 👈 IMPORTANT */
+  min-height: 240px;   /* 👈 IMPORTANT */
 }
