@@ -1,0 +1,91 @@
+<div class="card large temp-card">
+
+  <!-- HEADER -->
+  <div class="temp-header">
+    <div class="temp-title">❄ Temperature</div>
+
+    <div class="temp-tabs">
+      <button
+        [class.active]="selectedView === 'D'"
+        (click)="changeView('D')">D</button>
+
+      <button
+        [class.active]="selectedView === 'W'"
+        (click)="changeView('W')">W</button>
+
+        <button
+        [class.active]="selectedView === 'M'"
+        (click)="changeView('M')">M</button>
+
+        <button
+        [class.active]="selectedView === 'Y'"
+        (click)="changeView('Y')">Y</button>
+    </div>
+  </div>
+
+  <!-- CHART AREA -->
+  <div class="chart-content">
+
+    <!-- DAILY -->
+    <div *ngIf="selectedView === 'D'" class="temp-chart-slot">
+      
+
+      <app-heatmap-two
+        [visible]="true"
+        [xAxisLabels]="dailyX"
+        [yAxisLabels]="dailyY"
+        [heatmapData]="dailyData"
+        [xName]="'Hour'"
+        [yName]="''"
+
+        >
+      </app-heatmap-two>
+    </div>
+
+    <!-- WEEKLY (placeholder for now) -->
+    <div *ngIf="selectedView === 'W'" class="temp-chart-slot">
+      <!-- <div class="week-label">Weekly view coming</div> -->
+       <app-heatmap-two
+        [visible]="true"
+        [xAxisLabels]="WEEKLY_X"
+        [yAxisLabels]="WEEKLY_Y"
+        [heatmapData]="WEEKLY_HEATMAP_DATA"
+         [xName]="'Days'"
+        [yName]="'Floors'">
+      </app-heatmap-two>
+    </div>
+
+    <div *ngIf="selectedView === 'M'" class="temp-chart-slot">
+      <!-- <div class="week-label">Weekly view coming</div> -->
+       <app-heatmap-two
+        [visible]="true"
+        [xAxisLabels]="MONTHLY_X"
+        [yAxisLabels]="MONTHLY_Y"
+        [heatmapData]="MONTHLY_HEATMAP_DATA"
+        [xName]="'Months'"
+        [yName]="'Week'">
+      </app-heatmap-two>
+    </div>
+
+    <div *ngIf="selectedView === 'Y'" class="temp-chart-slot">
+      <!-- <div class="week-label">Weekly view coming</div> -->
+       <app-heatmap-two
+        [visible]="true"
+        [xAxisLabels]="YEARLY_X"
+        [yAxisLabels]="YEARLY_Y"
+        [heatmapData]="YEARLY_HEATMAP_DATA"
+        [xName]="'Month'"
+        [yName]="'Years'"
+        >
+      </app-heatmap-two>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="temp-footer">
+    <!-- <div class="summary">Max 40°C | Avg 24°C | Min 18°C</div> -->
+    <div class="location">Incubator B, Research Lab</div>
+  </div>
+
+</div>

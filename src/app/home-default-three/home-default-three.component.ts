@@ -18,6 +18,7 @@ import { LineChartComponent } from "../charts-chinmay/line-chart/line-chart.comp
 import { MediumCardComponent } from "../charts-chinmay/medium-card/medium-card.component";
 import { SmallCardComponent } from "../charts-chinmay/small-card/small-card.component";
 import { LargeCardComponent } from "../charts-chinmay/large-card/large-card.component";
+import { LargeCardTwoComponent } from "../charts-chinmay/large-card-two/large-card-two.component";
 
 @Component({
     selector: 'app-home-default-three',
@@ -38,7 +39,8 @@ import { LargeCardComponent } from "../charts-chinmay/large-card/large-card.comp
     BasicBarComponent,
     MediumCardComponent,
     SmallCardComponent,
-    LargeCardComponent
+    LargeCardComponent,
+    LargeCardTwoComponent
 ],
     templateUrl: './home-default-three.component.html',
     styleUrl: './home-default-three.component.scss',

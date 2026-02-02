@@ -13,7 +13,7 @@ export class HeatMapComponent {
   @Input() yAxisLabels: string[] = [];
   @Input() heatmapData: number[][] = [];
   @Output() pointClicked = new EventEmitter<any>();
-  @ViewChild('heatmapChart', { static: true }) chartRef!: ElementRef;
+  @ViewChild('heatmapChart') chartRef!: ElementRef;
   chartInstance!: echarts.ECharts;
   option!: echarts.EChartsOption
   HEATMAP_COLORS_COOL_WARM = [
@@ -29,13 +29,25 @@ export class HeatMapComponent {
 ];
 
   ngAfterViewInit(): void{
-    this.initChart()
+    setTimeout(() => {
+
+      this.initChart()
+    },0)
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.chartInstance && changes['heatmapData']) {
       this.chartInstance.setOption(this.setChartOptions(), true);
     }
+
+    
+
+    requestAnimationFrame(() => {
+      if (this.chartInstance) {
+        this.chartInstance.resize();
+      }
+    });
+
   }
 
 

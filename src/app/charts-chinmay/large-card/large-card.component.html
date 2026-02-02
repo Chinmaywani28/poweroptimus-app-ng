@@ -36,16 +36,16 @@
   <div class="chart-content" [ngSwitch]="selectedView">
     <ng-container *ngSwitchCase="'D'">
       <div class="temp-year">
-        <div class="temp-year">
+        <!-- <div class="temp-year">
           <button class="nav-btn">‹</button>
           <span class="year-text">2023</span>
           <button class="nav-btn">›</button>
-        </div>
+        </div> -->
   
         <!-- 🔥 CHART SLOT (ONLY THIS CHANGES) -->
         <div class="temp-chart-slot">
           <app-heatmap
-          *ngIf="WEEKLY_HEATMAP_DATA" 
+          
            [xAxisLabels]="WEEKLY_X" [yAxisLabels]="WEEKLY_Y"
             [heatmapData]="WEEKLY_HEATMAP_DATA"></app-heatmap>
         </div>
@@ -90,9 +90,9 @@
 
   <!-- FOOTER -->
   <div class="temp-footer">
-    <div class="summary">
+    <!-- <div class="summary">
       Max 40°C | Avg 24°C | Min 18°C
-    </div>
+    </div> -->
     <div class="location">
       Incubator B, Research Lab, North Wing
     </div>
