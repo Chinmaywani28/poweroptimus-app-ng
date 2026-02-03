@@ -61,9 +61,9 @@ export class BasicBarComponent {
         const option = {
             grid: {
                 top: 30,
-                left: 20,
-                right: 20,
-                bottom: 30,
+                left: 10,
+                right: 10,
+                bottom: 40,
                 containLabel: true // ✅ prevents label cut
             },
             xAxis: {
@@ -76,7 +76,7 @@ export class BasicBarComponent {
                 // name: this.xName, 
                  name: this.xName,          // "Hour"
                 nameLocation: 'middle',    // center it
-                nameGap: 27,    
+                nameGap: 24,    
             },
             yAxis: {
                 type: 'value',

@@ -11,7 +11,7 @@
   height: 100%;
   gap: 16px;
   /* padding: 16px; */
-  padding: 8px;
+  /* padding: 8px; */
   min-height: 0; /* CRITICAL */
 }
 .proximity-info {
