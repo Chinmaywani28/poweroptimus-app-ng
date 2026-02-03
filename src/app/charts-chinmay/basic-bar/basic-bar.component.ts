@@ -59,6 +59,13 @@ export class BasicBarComponent {
 
     private updateChart(): void {
         const option = {
+            grid: {
+                top: 30,
+                left: 20,
+                right: 20,
+                bottom: 30,
+                containLabel: true // ✅ prevents label cut
+            },
             xAxis: {
                 type: 'category',
                 data: this.xaxisData,
@@ -69,7 +76,7 @@ export class BasicBarComponent {
                 // name: this.xName, 
                  name: this.xName,          // "Hour"
                 nameLocation: 'middle',    // center it
-                nameGap: 26,    
+                nameGap: 27,    
             },
             yAxis: {
                 type: 'value',

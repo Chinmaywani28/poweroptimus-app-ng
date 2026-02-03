@@ -13,14 +13,19 @@
 }
 
 .temp-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   color: #1a73e8;
 }
 
+.temp-tabs {
+  display: flex;
+  gap: 5px;
+}
+
 .temp-tabs button {
   border: none;
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
   background: #eef3f8;
@@ -43,6 +48,7 @@
 }
 
 .temp-footer {
+  margin: 10px 0px;
   text-align: center;
   font-size: 15px;
 }

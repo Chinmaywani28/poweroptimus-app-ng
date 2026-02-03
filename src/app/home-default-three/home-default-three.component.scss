@@ -17,9 +17,9 @@
   overflow: hidden;
 }
 
-.card.small  { grid-column: span 3; height: 293px; } // first height: 300px;
-.card.medium { grid-column: span 6; height: 293px; } // first height: 320px;
-.card.large  { grid-column: span 6; height: 420px; } //first height: 420px 350px 290px
+.card.small  { grid-column: span 3; height: 240px; } // first height: 300px 260px;
+.card.medium { grid-column: span 6; height: 240px; } // first height: 320px // 293px;
+.card.large  { grid-column: span 9; height: 420px; } //first height: 420px 350px 290px
 
 
 .card-header {

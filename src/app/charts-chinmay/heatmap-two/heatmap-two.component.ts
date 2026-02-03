@@ -48,6 +48,13 @@ export class HeatMapTwoComponent {
 
   getOptions(): echarts.EChartsOption {
     return {
+      grid: {
+        top: 50,
+        left: 50,
+        right: 50,
+        bottom: 50,
+        // containLabel: true // ✅ prevents label cut
+      },
       tooltip: { position: 'top' },
       xAxis: { type: 'category', data: this.xAxisLabels, name: this.xName,nameLocation: 'middle',nameGap: 30,    },
       yAxis: { type: 'category', data: this.yAxisLabels, name: this.yName},

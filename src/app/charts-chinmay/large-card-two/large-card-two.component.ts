@@ -14,7 +14,7 @@ import { HeatMapTwoComponent } from "../heatmap-two/heatmap-two.component";
     styleUrl: './large-card-two.component.css',
 })
 export class LargeCardTwoComponent {
-    selectedView: 'D' | 'W' | 'M' | 'Y' = 'D';
+    selectedView: 'D' | 'W' | 'M' | 'Y' = 'W';
 
     WEEKLY_X: string[] = [];
     WEEKLY_Y: string[] = [];
@@ -33,6 +33,7 @@ export class LargeCardTwoComponent {
 
     ngOnInit() {
         this.loadDaily();
+        this.loadWeekly()
     }
 
     changeView(view: 'D' | 'W' | 'M' | 'Y') {

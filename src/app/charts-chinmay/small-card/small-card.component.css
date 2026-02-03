@@ -3,18 +3,18 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   text-align: center;
 }
 .kpi-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 8px;
   font-size: 26px;
   font-weight: 600;
   color: #1a73e8;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .kpi-icon {
@@ -36,8 +36,9 @@
 }
 
 .kpi-value .value {
-  font-size: 48px;
-  font-weight: 700;
+  /* font-size: 48px; */
+  font-size: 60px;
+  font-weight: 600;
   color: #1a73e8;
 }
 

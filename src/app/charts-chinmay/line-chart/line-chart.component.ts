@@ -47,9 +47,9 @@ export class LineChartComponent {
     const option: echarts.EChartsOption = {
       grid: {
         top: 30,
-        left: 40,
+        left: 20,
         right: 20,
-        bottom: 40,
+        bottom: 30,
         containLabel: true // ✅ prevents label cut
       },
 
@@ -66,7 +66,7 @@ export class LineChartComponent {
           fontSize: 11
         },
         nameLocation: 'middle',    // center it
-        nameGap: 23,
+        nameGap: 27,
       },
 
       yAxis: {
