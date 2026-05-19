@@ -86,6 +86,14 @@ export class BasicBarComponent {
                 {
                     data: this.seriesData,
                     type: 'bar',
+                    // ✅ Bar color
+                    itemStyle: {
+                        // color: 'red' // any color
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                    { offset: 0, color: '#36D1DC' },
+                    { offset: 1, color: '#5B86E5' }
+    ])
+                    }
                 },
             ],
         };

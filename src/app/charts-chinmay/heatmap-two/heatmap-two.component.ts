@@ -76,13 +76,20 @@ export class HeatMapTwoComponent {
         //   inRange: {
         //   color: this.HEATMAP_COLORS_COOL_WARM
         // }
-           pieces: [
-        { min: 25, max: 34, color: '#e8f0fe' }, // very low (super light)
-        { min: 35, max: 44, color: '#d2e3fc' }, // low
-        { min: 45, max: 54, color: '#aecbfa' }, // medium
-        { min: 55, max: 64, color: '#8ab4f8' }, // high
-        { min: 65, max: 80, color: '#669df6' }  // very high (still light, not dark)
-      ]
+      //      pieces: [
+      //   { min: 25, max: 34, color: '#e8f0fe' }, // very low (super light)
+      //   { min: 35, max: 44, color: '#d2e3fc' }, // low
+      //   { min: 45, max: 54, color: '#aecbfa' }, // medium
+      //   { min: 55, max: 64, color: '#8ab4f8' }, // high
+      //   { min: 65, max: 80, color: '#669df6' }  // very high (still light, not dark)
+      // ]
+      pieces: [
+  { min: 25, max: 34, color: '#ff7875' }, // soft red
+  { min: 35, max: 44, color: '#ff9c6e' }, // orange
+  { min: 45, max: 54, color: '#ffd666' }, // yellow
+  { min: 55, max: 64, color: '#b7eb8f' }, // light green
+  { min: 65, max: 80, color: '#73d13d' }  // green
+]
 
       },
     };
