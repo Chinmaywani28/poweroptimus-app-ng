@@ -1,9 +1,7 @@
 <div class="dashboard-grid">
 
   <div class="card small">
-    <!-- <div class="card-header">Small Chart</div> -->
     <div class="card-body">
-      <!-- <div class="fake-chart line">Line</div> -->
        <app-small-card></app-small-card>
     </div>
   </div>
@@ -22,7 +20,9 @@
       <!-- <div class="fake-chart "> -->
         <!-- <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar> -->
         
-        <app-medium-card [chart]="'bar'" [metric]="'Energy'" [status]="'Active'" [location]="'Tank A,Production Hall, Main Plant'"></app-medium-card>
+        <app-medium-card [chart]="'line'" [metric]="'Energy'" [status]="'4kWh'" [location]="'Tank A,Production Hall, Main Plant'"></app-medium-card>
+
+         <!-- <app-medium-card [chart]="'sankey'" [metric]="'Energy'" [status]="'40kWh'" [location]="'Tank A,Production Hall, Main Plant'"></app-medium-card> -->
       <!-- </div> -->
     </div>
   </div>
@@ -44,7 +44,170 @@
       <!-- <div class="fake-chart "> -->
         
         
-        <app-medium-card [chart]="'line'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+        <app-medium-card [chart]="'guage'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'doughnut'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'bar'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'bar-with-bg'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'axis-align-with-tick-bar'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'stacked-line'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'set-style-of-single-bar'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'waterfall-chart-bar'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'stacked-bar-with-border-two'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'referer-of-website'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'pie-with-padAngle'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <!-- smooth line chart -->
+   <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'smooth-line-chart'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <!-- stacked area chart -->
+   <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'stacked-area-chart'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <!-- dynamic-data-plus-time-axis chart(moving chart) -->
+   <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'dynamic-data-plus-time-axis'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
+      <!-- </div> -->
+    </div>
+  </div>
+
+
+  <!-- stacked horizatal bar chart -->
+   <div class="card medium">
+    <!-- <div class="card-header">Medium Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart "> -->
+        
+        
+        <app-medium-card [chart]="'stacked-hzl-bar-chart'" [metric]="'Level'" [status]="'40%'" [location]="'South Block, Main Facility'"></app-medium-card>
       <!-- </div> -->
     </div>
   </div>
@@ -56,10 +219,128 @@
     <div class="card-body">
       <!-- <div class="fake-chart heatmap">Heatmap</div> -->
        <!-- <app-large-card></app-large-card> -->
-       <app-large-card-two></app-large-card-two>
+       <app-large-card-two [timeInterval]="true" [chartName]="'heatmap'"></app-large-card-two>
 
+       <!-- <app-large-card-three></app-large-card-three> -->
     </div>
   </div>
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="false" [chartName]="'calender-pie'"></app-large-card-two>
+
+       <!-- <app-large-card-three></app-large-card-three> -->
+    </div>
+  </div>
+
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'sankey'"></app-large-card-two>
+
+       <!-- <app-large-card-three></app-large-card-three> -->
+    </div>
+  </div>
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'referer-of-website-pie-large'"></app-large-card-two>
+
+       <!-- <app-large-card-three></app-large-card-three> -->
+    </div>
+  </div>
+
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'pie-with-padAngle-large'"></app-large-card-two>
+
+       <!-- <app-large-card-three></app-large-card-three> -->
+    </div>
+  </div>
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+        <!-- from hierarchical relationships/ structure only -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'from-left-to-right-tree-large-card'"></app-large-card-two>
+
+      
+    </div>
+  </div>
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+        <!-- from hierarchical relationships/ structure only -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'graph-dynamic-large-card'"></app-large-card-two>
+
+      
+    </div>
+  </div>
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+        <!-- from hierarchical relationships/ structure only -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'force-layout-large-card'"></app-large-card-two>
+
+      
+    </div>
+  </div>
+
+   <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'calender-heatmap-large-card'"></app-large-card-two>
+
+      
+    </div>
+  </div>
+
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'doughnut-chart-large-card'"></app-large-card-two>
+
+      
+    </div>
+  </div>
+
+  <!-- basic candlestick -->
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'basic-candleStick'"></app-large-card-two>
+
+      
+    </div>
+  </div>
+  
 
  
 

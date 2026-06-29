@@ -19,6 +19,8 @@ import { MediumCardComponent } from "../charts-chinmay/medium-card/medium-card.c
 import { SmallCardComponent } from "../charts-chinmay/small-card/small-card.component";
 import { LargeCardComponent } from "../charts-chinmay/large-card/large-card.component";
 import { LargeCardTwoComponent } from "../charts-chinmay/large-card-two/large-card-two.component";
+// import { LargeComponent } from "../charts-chinmay/large-card-three/large-card-two.component";
+import { HeatMapThreeComponent } from "../charts-chinmay/heatmap-three/heatmap-two.component";
 
 @Component({
     selector: 'app-home-default-three',
@@ -40,7 +42,9 @@ import { LargeCardTwoComponent } from "../charts-chinmay/large-card-two/large-ca
     MediumCardComponent,
     SmallCardComponent,
     LargeCardComponent,
-    LargeCardTwoComponent
+    LargeCardTwoComponent,
+    // LargeComponent,
+    HeatMapThreeComponent
 ],
     templateUrl: './home-default-three.component.html',
     styleUrl: './home-default-three.component.scss',

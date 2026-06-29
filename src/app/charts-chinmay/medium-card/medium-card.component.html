@@ -15,6 +15,9 @@
         <!-- Warehouse 2,<br />
         South Block, Main Facility -->
         {{location}}
+
+        <br>
+        (20-05-26, 12:00 AM)
       </div>
     </div>
 
@@ -27,6 +30,9 @@
 
         @case ('bar') {
           <app-basic-bar [xaxisData]="weeklyBarXData" [seriesData]="weeklyBarYData" [xName]="'Hour'"></app-basic-bar>
+
+
+          <!-- <basic-line-chart></basic-line-chart> -->
         }
 
         @case ('line') {
@@ -34,6 +40,248 @@
             xName="Hour" yName="Per%">
           </app-line-chart>
         }
+
+        @case ('guage') {
+          <app-stage-speed-guage></app-stage-speed-guage>
+        }
+
+        @case ('doughnut') {
+          <app-half-doughnut></app-half-doughnut>
+        }
+
+        @case ('bar-with-bg') {
+          <app-bar-with-background [categories]="['Q1', 'Q2', 'Q3', 'Q4', 'Q5']" [values]="[40,90 ,80, 55, {
+                              value: 200,
+                              itemStyle: {
+                                color: '#a90000'
+                              }}]" [maxValue]="100"></app-bar-with-background>
+        }
+
+        @case ('axis-align-with-tick-bar') {
+          <app-axis-line-with-tick-bar></app-axis-line-with-tick-bar>
+        }
+
+        @case ('stacked-line') {
+         <app-stacked-line-chart [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']" [seriesData]="[
+              { name: 'Email', data: [120, 132, 101, 134, 90, 230, 210] },
+              { name: 'Affiliate', data: [220, 182, 191, 234, 290, 330, 310] },
+              { name: 'Search', data: [150, 232, 201, 154, 190, 330, 410] }
+            ]"></app-stacked-line-chart>
+        }
+
+
+        @case ('set-style-of-single-bar') {
+          <app-set-style-of-single-bar></app-set-style-of-single-bar>
+        }
+
+        @case ('waterfall-chart-bar') {
+          <app-waterfall-chart-bar [categories]="['Revenue', 'Costs', 'Taxes', 'Profit']" [data]="[1000, -300, -100, 600]"
+            [title]="'Quarterly Performance'"></app-waterfall-chart-bar>
+        }
+
+
+        <!-- @case ('stacked-bar-with-border') {
+          <app-stacked-bar-with-border [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']" [seriesData]="[
+              { name: 'Email', data: [120, 132, 101, 134, 90, 230, 210], color: '#5470C6' },
+              { name: 'Union Ads', data: [220, 182, 191, 234, 290, 330, 310], color: '#91CC75' },
+              { name: 'Video Ads', data: [150, 232, 201, 154, 190, 330, 410], color: '#EE6666' }
+            ]"></app-stacked-bar-with-border>
+        } -->
+
+        @case ('stacked-bar-with-border-two') {
+
+          <app-stacked-bar-with-border-two
+          [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+          [seriesData]="seriesData"
+          [borderRadius]="15"
+          [barWidth]="'40%'"
+          >
+        </app-stacked-bar-with-border-two>
+
+
+        }
+
+        @case ('referer-of-website') {
+
+          <app-referer-of-website-pie [data]="[
+            { value: 1048, name: 'Search Engines' },
+            { value: 735, name: 'Direct' },
+            { value: 580, name: 'Email' },
+            { value: 484, name: 'Social Media' },
+            { value: 300, name: 'Referral Links' }]"></app-referer-of-website-pie>
+
+
+        }
+
+        @case ('pie-with-padAngle') {
+
+            <app-pie-with-padAngle
+      [chartTitle]="'Energy Sources'"
+      [padAngle]="6"
+      [borderRadius]="12"
+      [innerRadius]="'45%'"
+      [outerRadius]="'75%'"
+          [chartData]=" [
+      {
+        value: 120,
+        name: 'Solar'
+      },
+      {
+        value: 90,
+        name: 'Grid'
+      },
+      {
+        value: 70,
+        name: 'DG'
+      },
+      {
+        value: 50,
+        name: 'Battery'
+      }
+    ]">
+    </app-pie-with-padAngle>
+
+
+        }
+
+
+        @case ('smooth-line-chart') {
+            
+            <app-smooth-line-chart
+  [title]="'Temperature Trend'"
+  [data]="{
+  labels: [
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun'
+  ],
+  values: [
+    24,
+    26,
+    25,
+    27,
+    29,
+    28,
+    30
+  ]
+}">
+  /* [gadgetType]="'temperature'" */
+  
+</app-smooth-line-chart>
+
+
+        }
+
+
+        @case ('stacked-area-chart') {
+            
+            <app-stacked-area-chart
+  [chartData]="{
+  title: '',
+
+  categories: [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun'
+  ],
+
+  series: [
+    {
+      name: 'HVAC',
+      color: '#3B82F6',
+      data: [120, 135, 140, 160, 180, 190]
+    },
+
+    {
+      name: 'Lighting',
+      color: '#F59E0B',
+      data: [80, 90, 85, 95, 100, 110]
+    },
+
+    {
+      name: 'IT Load',
+      color: '#10B981',
+      data: [200, 210, 215, 225, 240, 250]
+    },
+
+    {
+      name: 'UPS',
+      color: '#EF4444',
+      data: [40, 45, 50, 55, 60, 65]
+    }
+  ]
+}">
+</app-stacked-area-chart>
+
+
+
+        }
+
+        @case ('dynamic-data-plus-time-axis') {
+            
+           <app-dynamic-data-plus-time-axis
+  [title]="''"
+  [seriesName]="'Temperature'"
+  [chartData]="[
+  ['2026-06-21 10:00:00', 28],
+  ['2026-06-21 10:01:00', 29],
+  ['2026-06-21 10:02:00', 30],
+  ['2026-06-21 10:03:00', 31],
+  ['2026-06-21 10:04:00', 30]
+]">
+</app-dynamic-data-plus-time-axis>
+
+
+
+        }
+
+
+        @case ('stacked-hzl-bar-chart') {
+            
+            <app-stacked-hzl-bar-chart
+  [title]="''"
+  [categories]="[
+  'Floor 1',
+  'Floor 2',
+  'Floor 3',
+  'Floor 4',
+  'Floor 5'
+]"
+  [seriesData]="[
+  {
+    name: 'Solar',
+    color: '#FDBA2D',
+    data: [120, 140, 110, 90, 130]
+  },
+  {
+    name: 'Grid',
+    color: '#3B82F6',
+    data: [200, 180, 240, 220, 260]
+  },
+  {
+    name: 'Battery',
+    color: '#22C55E',
+    data: [80, 70, 90, 60, 50]
+  },
+  {
+    name: 'DG',
+    color: '#EF4444',
+    data: [40, 50, 30, 60, 45]
+  }
+]">
+</app-stacked-hzl-bar-chart>
+
+
+
+        }
+        
 
         }
 
