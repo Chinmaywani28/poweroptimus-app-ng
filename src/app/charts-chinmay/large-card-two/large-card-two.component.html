@@ -5,19 +5,19 @@
     <div class="temp-title">❄ Energy</div>
 
     <div class="temp-tabs" *ngIf="timeInterval">
-      <button
+      <button *ngIf="dailyInterval"
         [class.active]="selectedView === 'D'"
         (click)="changeView('D')">D</button>
 
-      <button
+      <button *ngIf="weeklyInterval"
         [class.active]="selectedView === 'W'"
         (click)="changeView('W')">W</button>
 
-        <button
+        <button *ngIf="monthlyInterval"
         [class.active]="selectedView === 'M'"
         (click)="changeView('M')">M</button>
 
-        <button
+        <button *ngIf="yearlyInterval"
         [class.active]="selectedView === 'Y'"
         (click)="changeView('Y')">Y</button>
     </div>
@@ -667,10 +667,9 @@
       <!-- Calendar Heatmap ( ex Sensor Type Distribution/"Am I trying to show who is connected to whom?") -->
         @case ('calender-heatmap-large-card') {
 
-
-         <div *ngIf="selectedView === 'D'" class="temp-chart-slot">
-
-                    <app-calender-heatmap-large-card
+    <div *ngIf="selectedView === 'M'" class="temp-chart-slot">
+          
+       <app-calender-heatmap-large-card
   [title]="'CO₂ Calendar Heatmap'"
   [year]="'2026'"
   [chartData]="[
@@ -708,30 +707,52 @@
   { date: '2026-02-01', value: 980 }
 
 ]">
-</app-calender-heatmap-large-card>     
-
-      
-
-    </div>
-         
-    <div *ngIf="selectedView === 'W'" class="temp-chart-slot">
-      
-         
-
-      
-
-    </div>
-
-    <div *ngIf="selectedView === 'M'" class="temp-chart-slot">
-          
-      
+</app-calender-heatmap-large-card>    
      
        
     </div>
 
     <div *ngIf="selectedView === 'Y'" class="temp-chart-slot">
          
-        
+         <app-calender-heatmap-large-card
+  [title]="'CO₂ Calendar Heatmap'"
+  [year]="'2026'"
+  [chartData]="[
+  { date: '2026-01-01', value: 420 },
+  { date: '2026-01-02', value: 435 },
+  { date: '2026-01-03', value: 450 },
+  { date: '2026-01-04', value: 510 },
+  { date: '2026-01-05', value: 620 },
+  { date: '2026-01-06', value: 780 },
+  { date: '2026-01-07', value: 900 },
+  { date: '2026-01-08', value: 850 },
+  { date: '2026-01-09', value: 760 },
+  { date: '2026-01-10', value: 690 },
+  { date: '2026-01-11', value: 530 },
+  { date: '2026-01-12', value: 470 },
+  { date: '2026-01-13', value: 440 },
+  { date: '2026-01-14', value: 425 },
+  { date: '2026-01-15', value: 410 },
+  { date: '2026-01-16', value: 395 },
+  { date: '2026-01-17', value: 430 },
+  { date: '2026-01-18', value: 520 },
+  { date: '2026-01-19', value: 680 },
+  { date: '2026-01-20', value: 820 },
+  { date: '2026-01-21', value: 980 },
+  { date: '2026-01-22', value: 940 },
+  { date: '2026-01-23', value: 760 },
+  { date: '2026-01-24', value: 620 },
+  { date: '2026-01-25', value: 540 },
+  { date: '2026-01-26', value: 490 },
+  { date: '2026-01-27', value: 460 },
+  { date: '2026-01-28', value: 430 },
+  { date: '2026-01-29', value: 410 },
+  { date: '2026-01-30', value: 390 },
+  { date: '2026-01-31', value: 380 },
+  { date: '2026-02-01', value: 980 }
+
+]">
+</app-calender-heatmap-large-card>    
       
     </div>
       }
@@ -831,27 +852,72 @@
          
     <div *ngIf="selectedView === 'W'" class="temp-chart-slot">
       
-         
-
-      
-
-    </div>
-
-    <div *ngIf="selectedView === 'M'" class="temp-chart-slot">
+         <app-basicCandlestick-large-card [xAxisData]="[
+            '10:00',
+            '10:05',
+            '10:10',
+            '10:15',
+            '10:20',
+            '10:25'
+          ]" [chartData]="[
           
-      
-     
-       
-    </div>
+            [120, 130, 118, 136],
+          
+            [130, 122, 120, 138],
+          
+            [122, 145, 120, 150],
+          
+            [145, 138, 134, 152],
+          
+            [138, 155, 135, 160],
+          
+            [155, 148, 145, 162]
+          
+          ]">
+          </app-basicCandlestick-large-card>
 
-    <div *ngIf="selectedView === 'Y'" class="temp-chart-slot">
-         
-        
       
+
     </div>
       }
 
+      <!-- line chart D | W | M | Y -->
+        @case ('advance-line-chart') {
+        
+        
+        <div *ngIf="selectedView === 'D'" class="temp-chart-slot">
 
+
+          <app-advance-line-chart [xAxisData]="['12AM','3AM','6AM','9AM','12PM']" [seriesData]="[22, 24, 23, 26, 25]"
+            xName="Hour" yName="Per%"></app-advance-line-chart>
+        
+        
+        </div>
+        
+        <div *ngIf="selectedView === 'W'" class="temp-chart-slot">
+        
+        <app-advance-line-chart [xAxisData]="['12AM','3AM','6AM','9AM','12PM']" [seriesData]="[22, 24, 23, 26, 25]"
+            xName="Hour" yName="Per%"></app-advance-line-chart>
+        
+        
+        
+        </div>
+        
+        <div *ngIf="selectedView === 'M'" class="temp-chart-slot">
+        
+        <app-advance-line-chart [xAxisData]="['12AM','3AM','6AM','9AM','12PM']" [seriesData]="[22, 24, 23, 26, 25]"
+            xName="Hour" yName="Per%"></app-advance-line-chart>
+        
+        
+        </div>
+        
+        <div *ngIf="selectedView === 'Y'" class="temp-chart-slot">
+        
+        <app-advance-line-chart [xAxisData]="['12AM','3AM','6AM','9AM','12PM']" [seriesData]="[22, 24, 23, 26, 25]"
+            xName="Hour" yName="Per%"></app-advance-line-chart>
+        
+        </div>
+        }
     }
     
 

@@ -312,7 +312,7 @@
     <div class="card-body">
       <!-- <div class="fake-chart heatmap">Heatmap</div> -->
        <!-- <app-large-card></app-large-card> -->
-       <app-large-card-two [timeInterval]="true" [chartName]="'calender-heatmap-large-card'"></app-large-card-two>
+       <app-large-card-two [timeInterval]="true" [chartName]="'calender-heatmap-large-card'" [dailyInterval]="false" [weeklyInterval]="false"></app-large-card-two>
 
       
     </div>
@@ -335,7 +335,20 @@
     <div class="card-body">
       <!-- <div class="fake-chart heatmap">Heatmap</div> -->
        <!-- <app-large-card></app-large-card> -->
-       <app-large-card-two [timeInterval]="true" [chartName]="'basic-candleStick'"></app-large-card-two>
+       <app-large-card-two [timeInterval]="true" [chartName]="'basic-candleStick'" [monthlyInterval]="false" [yearlyInterval]="false"></app-large-card-two>
+
+      
+    </div>
+  </div>
+
+
+  <!-- Timestamp line chart -->
+  <div class="card large">
+    <!-- <div class="card-header">Large Chart</div> -->
+    <div class="card-body">
+      <!-- <div class="fake-chart heatmap">Heatmap</div> -->
+       <!-- <app-large-card></app-large-card> -->
+       <app-large-card-two [timeInterval]="true" [chartName]="'advance-line-chart'"></app-large-card-two>
 
       
     </div>

@@ -17,10 +17,11 @@ import { ForceLayoutLargeCardComponent } from "../force-layout-large-card/force-
 import { CalenderHeatmapLargeCardComponent } from "../calender-heatmap-large-card/calender-heatmap-large-card.component";
 import { DoughnutChartLargeCardComponent } from "../doughnut-chart-large-card/doughnut-chart-large-card.component";
 import { BasicCandleStickLargeCardComponent } from "../basic-candlestick-large-card/basic-candlestick-large-card.component";
+import { AdvanceLineChartComponent } from "../advance-line-chart/advance-line-chart.component";
 @Component({
     selector: 'app-large-card-two',
     standalone: true,
-    imports: [HeatMapComponent, CommonModule, HeatMapTwoComponent, RefererComponent, HalftDoughnutComponent, CalendarPieComponent, SankeyComponent, RefererOfWebsitePieLargeCardComponent, PieWithPadAngleLargeCardComponent, FromLeftToRightTreeLargeCardComponent, GraphDynamicLargeCardComponent, ForceLayoutLargeCardComponent, CalenderHeatmapLargeCardComponent, DoughnutChartLargeCardComponent, BasicCandleStickLargeCardComponent],
+    imports: [HeatMapComponent, CommonModule, HeatMapTwoComponent, RefererComponent, HalftDoughnutComponent, CalendarPieComponent, SankeyComponent, RefererOfWebsitePieLargeCardComponent, PieWithPadAngleLargeCardComponent, FromLeftToRightTreeLargeCardComponent, GraphDynamicLargeCardComponent, ForceLayoutLargeCardComponent, CalenderHeatmapLargeCardComponent, DoughnutChartLargeCardComponent, BasicCandleStickLargeCardComponent, AdvanceLineChartComponent],
     templateUrl: './large-card-two.component.html',
     styleUrl: './large-card-two.component.css',
 })
@@ -28,6 +29,12 @@ export class LargeCardTwoComponent {
     selectedView: 'D' | 'W' | 'M' | 'Y' = 'W';
     @Input() chartName: any = 'heatmap';
     @Input() timeInterval: boolean = true;
+
+    @Input() dailyInterval: boolean = true;
+    @Input() weeklyInterval: boolean = true;
+    @Input() monthlyInterval: boolean = true;
+    @Input() yearlyInterval: boolean = true;
+
 
 
     WEEKLY_X: string[] = [];
